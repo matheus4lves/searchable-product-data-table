@@ -1,12 +1,22 @@
 import React from "react";
 
-const Main = () => {
-  return (
-    <>
-      <h1>Welcome!</h1>
-      <p>This is the basic React webpack configuration. Update it as needed.</p>
-    </>
-  );
-};
+// Components
+import SearchBar from "./components/SearchBar";
+import ProductTable from "./components/ProductTable";
+
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <>
+        <SearchBar />
+        <ProductTable products={this.props.products} />
+      </>
+    );
+  }
+}
 
 export default Main;
