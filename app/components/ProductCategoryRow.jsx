@@ -6,7 +6,7 @@ class ProductCategoryRow extends React.Component {
   }
 
   render() {
-    const category = this.props.catagory;
+    const category = this.props.category;
 
     return (
       <>
