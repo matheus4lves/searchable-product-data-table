@@ -1,8 +1,7 @@
 import React from "react";
 
 // Components
-import SearchBar from "./components/SearchBar";
-import ProductTable from "./components/ProductTable";
+import FilterableProductTable from "./components/FilterableProductTable";
 
 class Main extends React.Component {
   constructor(props) {
@@ -12,8 +11,7 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <SearchBar />
-        <ProductTable products={this.props.products} />
+        <FilterableProductTable />
       </>
     );
   }
