@@ -12,10 +12,8 @@ class ProductTable extends React.Component {
   render() {
     const rows = [];
     let lastCategory = null;
-    // const filterText = this.props.filterText;
-    const filterText = "7";
-    // const inStockOnly = this.props.inStockOnly;
-    const inStockOnly = true;
+    const filterText = this.props.filterText;
+    const inStockOnly = this.props.inStockOnly;
 
     let results = this.props.products.filter(product => {
       // When there's a term to search for
