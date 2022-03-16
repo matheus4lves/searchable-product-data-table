@@ -51,7 +51,6 @@ if (mode === "dev") {
     open: {
       app: {
         name: "firefox",
-        arguments: ["--private-window"],
       },
     },
     port: 3000,
