@@ -15,29 +15,11 @@ class ProductTable extends React.Component {
     const filterText = this.props.filterText;
     const inStockOnly = this.props.inStockOnly;
 
-    let results = this.props.products.filter(product => {
-      // When there's a term to search for
-      if (filterText !== "" && filterText !== null) {
-        // And the checkbox is checked
-        if (inStockOnly) {
-          return product.name.includes(filterText) && product.stocked ? product : null;
-          // And the checkbox isn't checked
-        } else {
-          return product.name.includes(filterText);
-        }
-        // When there's no term to search for
-      } else if (filterText === "" || filterText === null) {
-        // And the checkbox is checked
-        if (inStockOnly) {
-          return product.stocked ? product : null;
-          // And the checkbox isn't checked
-        } else {
-          return this.props.products;
-        }
-      }
-    });
+    this.props.products.forEach(product => {
+      if (product.name.indexOf(filterText) === -1) return;
 
-    results.forEach(product => {
+      if (inStockOnly && !product.stocked) return;
+
       if (product.category !== lastCategory) {
         rows.push(<ProductCategoryRow category={product.category} key={product.category} />);
       }
